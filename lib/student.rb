@@ -93,10 +93,10 @@ class Student
       SELECT *
       FROM students
       WHERE grade = ?
-      LIMIT 10
+      LIMIT ?
       SQL
     
-    10th_grade = DB[:conn].execute(sql, 10).map do |row|
+    10th_grade = DB[:conn].execute(sql, 10, num).map do |row|
       self.new_from_db(row)
     end
   end
