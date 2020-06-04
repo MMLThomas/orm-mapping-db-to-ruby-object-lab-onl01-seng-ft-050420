@@ -95,9 +95,15 @@ class Student
       WHERE grade = ?
       SQL
     
-    DB[:conn].execute(sql, 10).map do |row|
+    10th_grade = DB[:conn].execute(sql, 10).map do |row|
       self.new_from_db(row)
     end
+    
+    i = 0
+    new = []
+    (1..num).map{ |student| new << 10th_grade[i] i+= 1}
+    new
+    
   end
     
   def self.first_student_in_grade_10
