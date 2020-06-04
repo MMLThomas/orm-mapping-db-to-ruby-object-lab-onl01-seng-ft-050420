@@ -101,7 +101,10 @@ class Student
     
     i = 0
     new = []
-    (1..num).map{ |student| new << 10th_grade[i] i+= 1}
+    (1..num).each do |student| 
+    new << 10th_grade[i] 
+    i += 1
+    end
     new
     
   end
